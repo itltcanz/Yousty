@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--suppress RequiredAttributes -->
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/elements.css"/>
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/account.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <title>Yousty</title>
+</head>
+<body th:style="'background-image: url(' + @{/images/background/account-background.jpg} + ');'">
+<header th:replace="~{blocks/header}"></header>
+<main>
+    <h2>Аккаунт</h2>
+    <div class="user-container block">
+        <div class="img-container block increasing">
+            <img th:src="${user.image.path}"  alt="Image">
+        </div>
+        <div class="account-info">
+            <h2 th:attr="user-id=${user.id}" th:text="${user.username}"></h2>
+            <div class="account-actions">
+                <a href="/account/add-outfit" class="increasing block">Добавить наряд</a>
+                <a href="/logout" class="increasing block" style="background-color: rgba(255,7,0,0.65)">Выйти</a>
+            </div>
+        </div>
+    </div>
+    <h2>Работы пользователя</h2>
+    <div class="outfits-container">
+        <div class="outfit-card increasing" th:each="outfit : ${outfits}">
+            <a th:href="'/styles/' + ${outfit.style.name} + '/' + ${outfit.id}">
+                <img class="outfit" th:src="${outfit.images[0].path}" alt="Image">
+            </a>
+            <div class="info block">
+                <a th:href="'/accounts/' + ${outfit.creator.username}" th:text="${outfit.creator.username}"></a>
+                <img class="like increasing" th:src="@{/images/static/like.png}" alt="Image">
+            </div>
+        </div>
+    </div>
+</main>
+<div id="infinite-scroll-marker"></div>
+<footer th:replace="~{blocks/footer}"></footer>
+<script src="/js/infinityScrollAccount.js"></script>
+</body>
+</html>

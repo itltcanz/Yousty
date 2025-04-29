@@ -1,0 +1,88 @@
+.main-card {
+    align-items: center;
+    padding: 2.5vw;
+}
+
+.main-text {
+    flex: 1;
+}
+
+.main-card p {
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 400;
+    color: black;
+    font-size: 1.5vw;
+    margin-top: 1vw;
+    letter-spacing: normal;
+}
+
+.button-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 4vw;
+    border-radius: 1vw;
+    margin-top: 1vw;
+    background-color: rgba(202, 161, 221, 0.5);
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.2vw;
+    color: black;
+    padding: 0.5vw;
+    backdrop-filter: blur(1vw);
+    box-shadow: 0 0 0.5vw rgba(0, 0, 0, .1);
+}
+
+.main-image {
+    width: 35vw;
+}
+
+.style-card {
+    flex-direction: row;
+    height: 35vw;
+}
+
+.style-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Comfortaa', serif;
+    border-radius: 2vw 0 0 2vw;
+    padding: 2.5%;
+    width: 70%;
+}
+
+.style-card h2 {
+    font-size: 2vw;
+    margin-bottom: 2.5vw;
+    width: 50%;
+    text-align: center;
+    font-family: 'Comfortaa', serif;
+    cursor: pointer;
+    color: black;
+}
+
+.style-card p {
+    width: 100%;
+    height: 100%;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 400;
+    font-size: 1.5vw;
+    padding: 1vw;
+    letter-spacing: normal;
+    line-height: 2;
+    border-radius: 2vw;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+}
+
+.img-container-card {
+    display: flex;
+}
+
+.style-image {
+    width: 30%;
+    flex-grow: 1;
+    object-fit: cover;
+    border-radius: 0 2vw 2vw 0;
+}

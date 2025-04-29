@@ -1,0 +1,57 @@
+form {
+    padding: 2vw;
+}
+
+form {
+    gap: 2vw;
+    margin: 4vw auto;
+    width: 28vw;
+    padding: 2vw;
+}
+
+.form {
+    display: grid;
+}
+
+form h2 {
+    font-size: 2.2vw;
+    text-align: center;
+}
+
+form label {
+    height: 3vw;
+}
+
+form input, form select {
+    width: 100%;
+    height: 3vw;
+    font-size: 1vw;
+    padding: 0.5vw 1vw;
+    font-weight: lighter;
+    appearance: none;
+}
+
+form input::placeholder{
+    color: #ffffff6c;
+}
+
+form a {
+    color: white;
+    padding-left: 1.1vw;
+    font-size: 0.8vw;
+}
+
+form button {
+    width: 100%;
+    height: 3vw;
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 1vw;
+    color: #333;
+    font-weight: bold;
+    border-radius: 2vw;
+    font-family: 'Comfortaa', sans-serif;
+}

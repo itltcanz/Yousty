@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yousty</title>
+    <link rel="stylesheet" href="/css/elements.css"/>
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<meta name="viewport" content="width=device-width">
+
+<body th:style="'background-image: url(' + @{/images/background/main-background.jpg} + ');'">
+
+<header th:replace="~{blocks/header}"></header>
+
+<main>
+    <div class="main-card block">
+        <div class="main-text">
+            <h1>Выбери <br>свой образ!</h1>
+            <p>Здесь Вы можете выбрать <br>cвой идеальный образ! Мы воплотим<br>Ваши мечты в реальность!</p>
+            <a class="button-start increasing" href="/styles">Начать!</a>
+        </div>
+            <img class="main-image" th:src="@{/images/static/main-image.png}" alt="image">
+    </div>
+
+    <a class="style-card increasing block" th:each="style : ${styles}" th:href="'styles/' + ${style.name}"
+       th:style="'background-color: ' + ${style.backColor} + ';' + 'color: ' + ${style.textColor} + ';'">
+        <div class="style-text">
+            <h2 th:text="${style.name}" th:style="'color: ' + ${style.textColor} + ';'"></h2>
+            <p th:text="${style.description}" th:style="'color: ' + ${style.textColor} + ';'"></p>
+        </div>
+        <img class="style-image" th:src="${style.outfits[0].image.path}" alt="image">
+    </a>
+
+</main>
+
+<footer th:replace="~{blocks/footer}"></footer>
+
+</body>
+
+</html>

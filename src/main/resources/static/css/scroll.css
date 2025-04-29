@@ -1,0 +1,12 @@
+::-webkit-scrollbar {
+    width: 0.6vw; /* ширина скроллбара */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #D0B792; /* цвет ползунка */
+    border-radius: 1vw; /* закругление углов ползунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a58c67; /* цвет ползунка при наведении */
+}

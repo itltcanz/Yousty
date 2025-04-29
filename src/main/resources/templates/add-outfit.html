@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/elements.css"/>
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/add-outfit.css"/>
+    <title>Yousty</title>
+</head>
+<body th:style="'background-image: url(' + @{/images/background/account-background.jpg} + ');'">
+<header th:replace="~{blocks/header}"></header>
+<main>
+    <form class="block form" method="post" action="/account/add-outfit" enctype="multipart/form-data">
+        <h2>Создание наряда</h2>
+        <input class="block increasing" type="file" id="images" name="images" placeholder="Изображения"
+               accept="image/png, image/jpeg, image/jpg" multiple required>
+
+        <select class="block increasing" id="style" name="style" required>
+            <option value="" selected disabled>Стиль</option>
+            <option th:each="style : ${styles}" th:text="${style.name}" th:value="${style.id}"></option>
+        </select>
+
+        <button type="submit" class="increasing">Add product</button>
+    </form>
+</main>
+<footer th:replace="~{blocks/footer}"></footer>
+<script src="/js/slider.js"></script>
+</body>
+</html>

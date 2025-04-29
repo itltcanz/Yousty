@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url("../fonts/Comfortaa.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+.increasing {
+    transition-property: transform; /* указывает на какое свойство работает анимация */
+    transition-duration: 0.3s; /* указывает время анимации */
+    transform-origin: center; /* Устанавливает точку опоры в центре элемента */
+}
+
+.increasing:hover {
+    transform: scale(1.02);
+}
+
+.block {
+    display: flex;
+    border-radius: 2vw;
+    backdrop-filter: blur(1vw);
+    box-shadow: 0 0 1vw rgba(0, 0, 0, .1);
+}
+
+body {
+    font-family: 'Comfortaa', sans-serif;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 5vw;
+    width: 80%;
+    margin: auto;
+    padding: 1vw;
+}
+
+.header {
+    border-radius: 0 0 2vw 2vw;
+}
+
+header > :nth-child(odd) {
+    width: 20%;
+}
+
+.header-logo {
+    font-weight: bold;
+    color: rgba(180, 159, 127, 1);
+    font-size: 2.5vw;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 20%;
+    margin-left: 10%;
+}
+
+nav a {
+    font-size: 1.25vw;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header-item {
+    display: flex;
+}
+
+header input {
+    height: 3vw;
+    padding: 1vw 3vw;
+    border-radius: 2vw;
+    font-size: 1vw;
+    background-size: 1.5vw;
+    background-position: 1vw center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: rgba(30, 30, 30, 0.22);
+    color: rgba(0, 0, 0, 0.64);
+    outline: none;
+}
+
+header input:active {
+    background-color: rgba(30, 30, 30, 0.22);
+}
+
+main {
+    display: grid;
+    gap: 2vw;
+    width: 80%;
+    margin: 2vw auto;
+}
+
+h1 {
+    font-size: 5vw;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 2.2vw;
+    font-weight: bolder;
+}
+
+input:focus {
+    scale: 1.02;
+}
+
+footer {
+    font-size: 1.2vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 2vw;
+    margin: 1vw 0 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    backdrop-filter: blur(1vw);
+    box-shadow: 0 0 1vw rgba(0, 0, 0, .1);
+}
+
+.footer-logo {
+    color: white;
+    font-weight: bold;
+    font-size: 2.5vw;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer div p {
+    font-weight: bold;
+}
+
+footer a {
+    display: block;
+    color: white;
+}

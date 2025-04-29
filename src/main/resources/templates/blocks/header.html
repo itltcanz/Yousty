@@ -1,0 +1,9 @@
+<header class="block header">
+    <a class="header-logo increasing" href="/">Yousty</a>
+    <nav>
+        <a class="increasing" href="/styles">Стили</a>
+        <a class="increasing" href="/account" th:text="${user == null} ? 'Войти' : 'Аккаунт'"></a>
+    </nav>
+    <input class="increasing" id="search" name="search" type="text" placeholder="Найти..."
+           th:style="'background-image: url(' + @{/images/static/search-icon.png} + ');'">
+</header>

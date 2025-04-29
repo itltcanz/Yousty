@@ -1,0 +1,72 @@
+header a, .header-logo {
+    color: white;
+}
+
+header input::placeholder {
+    color: white;
+}
+
+header input {
+    color: white;
+}
+
+form {
+    gap: 2vw;
+    margin: 4vw auto;
+    flex-grow: 1;
+    width: 28vw;
+    background: transparent;
+    color: white;
+    padding: 2vw;
+}
+
+.form {
+    display: grid;
+}
+
+form h2 {
+    font-size: 2.2vw;
+    text-align: center;
+}
+
+form label {
+    height: 3vw;
+}
+
+form input {
+    width: 100%;
+    height: 3vw;
+    background: transparent;
+    outline: none;
+    border: 0.15vw solid rgba(255, 255, 255, .2);
+    border-radius: 2vw;
+    font-size: 1vw;
+    color: white;
+    padding: 0.5vw 1vw;
+    font-weight: lighter;
+}
+
+form input::placeholder{
+    color: #ffffff6c;
+}
+
+form a {
+    color: white;
+    padding-left: 1.1vw;
+    font-size: 0.8vw;
+}
+
+form button {
+    width: 100%;
+    height: 3vw;
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 1vw;
+    color: #333;
+    font-weight: bold;
+    border-radius: 2vw;
+    font-family: 'Comfortaa', sans-serif;
+}

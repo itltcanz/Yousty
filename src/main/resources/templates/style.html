@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Yousty</title>
+    <link rel="stylesheet" href="/css/elements.css"/>
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <style th:inline="text">
+        header a {color: [[${style.textColor}]];}
+        .header-logo {color: [[${style.textColor}]];}
+        header input {color: [[${style.textColor}]];}
+        header input::placeholder {color: [[${style.textColor}]];}
+        main {color: [[${style.textColor}]];}
+        a {color: [[${style.textColor}]];}
+    </style>
+</head>
+<body th:style="${style.image != null} ?
+'background-image: url(' + ${style.image.path} + ');' :
+'background-color: ' + ${style.backColor} + ';' +
+'color: ' + ${style.textColor} + ';'">
+<header th:replace="~{blocks/header}"></header>
+<main>
+    <h2 th:text="${style.name}" th:attr="style-id=${style.id}" th:style="'color: ' + ${style.textColor} + ';'"></h2>
+    <div class="outfits-container">
+        <div class="outfit-card increasing" th:each="outfit : ${style.outfits}">
+            <a th:href="'/styles/' + ${style.name} + '/' + ${outfit.id}">
+                <img class="outfit" th:src="${outfit.images[0].path}" alt="Image">
+            </a>
+            <div class="info block">
+                <a th:href="'/accounts/' + ${outfit.creator.username}" th:text="${outfit.creator.username}"></a>
+                <img class="like increasing" th:src="@{/images/static/like.png}" alt="Image">
+            </div>
+        </div>
+    </div>
+</main>
+<div id="infinite-scroll-marker"></div>
+<footer th:replace="~{blocks/footer}"></footer>
+<script th:src="@{/js/infinityScrollStyle.js}"></script>
+</body>
+</html>

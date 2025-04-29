@@ -1,0 +1,40 @@
+.outfits-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4vh;
+}
+
+.outfit-card {
+    height: 65vh;
+    position: relative;
+}
+
+.outfit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1vw;
+    cursor: pointer;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    box-shadow: 0 0 1vw rgba(0, 0, 0, .1);
+    bottom: 0;
+    width: 100%;
+    height: 4.6vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1vw;
+    align-items: center;
+    padding: 1.4vw;
+}
+
+.info a {
+    font-size: 0.8vw;
+}
+
+.like {
+    width: 2vw;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Products</title>
+    <link rel="stylesheet" href="/css/elements.css"/>
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/outfit.css"/>
+    <style th:inline="text">
+        header a {color: [[${style.textColor}]];}
+        .header-logo {color: [[${style.textColor}]];}
+        header input {color: [[${style.textColor}]];}
+        header input::placeholder {color: [[${style.textColor}]];}
+        main {color: [[${style.textColor}]];}
+        a {color: [[${style.textColor}]];}
+    </style>
+</head>
+<body th:style="${style.image != null} ?
+'background-image: url(' + ${style.image.path} + ');' :
+'background-color: ' + ${style.backColor} + ';' +
+'color: ' + ${style.textColor} + ';'">
+<header th:replace="~{blocks/header}"></header>
+<main>
+    <div class="outfit-container block">
+        <div class="img-container">
+            <img class="increasing" th:src="${style.outfits[0].image.path}" alt="Image">
+        </div>
+        <div class="text-card">
+            <div class="info-block">
+                <a class="username increasing" th:href="${style.outfits[0].creator.username}" th:text="${style.outfits[0].creator.username}"></a>
+                <p th:text="'Просмотры: ' + ${style.popularity}"></p>
+                <a class="clothing" th:each="clothing : ${style.outfits[0].clothing}"
+                   th:href="${clothing.link}" th:text="${clothing.name}" th:if="${style.outfits[0].clothing}"></a>
+                <div class="like-container">
+                    <img class="like increasing" th:src="@{/images/static/like.png}" alt="Like">
+                </div>
+            </div>
+            <div class="comments-container">
+                <h2 class="title">Комментарии</h2>
+                <div class="comments">
+                    <form>
+                        <label for="comment"></label>
+                        <input id="comment" class="write-comment" type="text" placeholder="Введите комментарий">
+                    </form>
+                    <div class="comment increasing block" th:each="comment : ${style.outfits[0].comments}" th:if="${style.outfits[0].comments}">
+                        <a th:href="'/account/' + ${comment.author.username}"
+                           th:text="${comment.author.username}" class="increasing"></a>
+                        <p th:text="${comment.text}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer th:replace="~{blocks/footer}"></footer>
+</body>
+</html>

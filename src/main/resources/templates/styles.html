@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/elements.css"/>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <link rel="stylesheet" href="/css/scroll.css">
+    <title>Yousty</title>
+</head>
+<body th:style="'background-image: url(' + @{/images/background/styles-background.png} + ');'">
+<header th:replace="~{blocks/header}"></header>
+<main>
+    <h2>Стили</h2>
+    <a class="style-card increasing block" th:each="style : ${styles}" th:href="'styles/' + ${style.name}"
+       th:style="'background-color: ' + ${style.backColor} + ';' + 'color: ' + ${style.textColor} + ';'">
+        <div class="style-text">
+            <h2 th:text="${style.name}" th:style="'color: ' + ${style.textColor} + ';'"></h2>
+            <p th:text="${style.description}" th:style="'color: ' + ${style.textColor} + ';'"></p>
+        </div>
+        <img class="style-image" th:src="${style.outfits[0].image.path}" alt="image">
+    </a>
+</main>
+<div id="infinite-scroll-marker"></div>
+<footer th:replace="~{blocks/footer}"></footer>
+<script th:src="@{/js/infinityScrollStyles.js}"></script>
+</body>
+</html>

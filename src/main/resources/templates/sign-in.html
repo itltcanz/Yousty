@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Sign in</title>
+    <link rel="stylesheet" href="/css/elements.css">
+    <link rel="stylesheet" href="/css/scroll.css">
+    <link rel="stylesheet" href="/css/sign.css">
+</head>
+<body th:style="'background-image: url(' + @{/images/background/sing-in-background.jpg} + ');'">
+<header th:replace="~{blocks/header}"></header>
+<main>
+    <form class="block form" method="post" enctype="multipart/form-data">
+        <h2>Авторизация</h2>
+        <input class="increasing" id="username" name="username" type="text" placeholder="Username" required>
+        <input class="increasing" id="password" name="password" type="password" placeholder="Password" required>
+        <a class="increasing" href="/sign-up">Зарегистрироваться</a>
+        <button type="submit" class="increasing">Авторизоваться</button>
+    </form>
+</main>
+<footer th:replace="~{blocks/footer}"></footer>
+</body>
+</html>
