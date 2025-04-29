@@ -33,14 +33,6 @@ Before starting, ensure the following tools are installed:
    python/resources/model
     ```
 
-2. Run the project to create database tables:
-
-    ```bash
-   ./mvnw clean install
-
-   java -jar build/libs/tms-plain.jar
-    ```
-
    Installation is now complete.
 
 ### Launch
